@@ -1,0 +1,140 @@
+* {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+}
+
+#header {
+	padding-top: 5px;
+    padding-bottom: 10px;
+    border-bottom: solid 1px #AAccbb;
+}
+
+#sidebar {
+	position: absolute;
+	left: 10px;
+	top: 45px;
+	bottom: 20px;
+	width: 260px;
+	border:solid 1px #CCeebb;
+	overflow-y: scroll;
+}
+
+#content {
+    position: absolute;
+   	top: 45px;
+   	bottom: 20px;
+   	left:300px;
+   	width:75%;
+}
+
+.form-left-col {
+    float: left;
+}
+
+.form-right-col {
+	width:260px;
+	float: right;
+}
+
+.repairtab table {
+	border: 5px;
+	width: 100%;
+	padding: 2px;
+	border-spacing : 5px;
+	margin: 3px;
+}
+
+.repairtab tr {
+	text-decoration:none;
+	color: #004422;
+	border-bottom:solid 1px #CCffCC;
+	padding: 8px;
+}
+.repairtab2 tr {
+	text-decoration:none;
+	color: #226644;
+	background-color: #88DDBB;
+	border-bottom:solid 4px #88ccaa;
+	padding: 8px;
+}
+
+.repairtab tr:nth-child(2n) {
+	background-color: #ddffee
+}
+
+.repairtab tr a{
+	text-decoration:none;
+	/* display: block; */
+	color: #000000;
+	border-bottom:solid 1px #CCffdd;
+	padding: 8px;
+}
+
+.repairtab tr:hover {
+	background-color: #448866;
+	color: #ffffff;
+}
+
+.sidebar table {
+	border: 0px;
+	width: 100%;
+	padding: 0px;
+	border-spacing : 0px;
+	margin: 0px;
+}
+
+.sidebar tr {
+	text-decoration:none;
+	color: #000000;
+	border-bottom:solid 1px #CCCCCC;
+	padding: 8px;
+}
+
+.sidebar tr:nth-child(odd) {background-color: #f2fff2}
+
+.sidebar tr a{
+	text-decoration:none;
+	color: #000000;
+	border-bottom:solid 1px #CCCCCC;
+	padding: 8px;
+}
+
+.sidebar tr:hover {
+	background-color: #bbeecc;
+	color: #000000;
+}
+
+input, textarea {
+  border:1px solid #ccc;
+  min-height:30px;
+  outline: none;
+}
+
+.form-left-col input {
+  margin-bottom:15px;
+  margin-top:5px;
+  width:280px;
+}
+
+.form-table-top {
+  top:15px;
+  left:5px;
+  width:100%;
+  height:80%;
+}
+
+textarea {
+	margin-bottom: 1px;
+  	margin-top: 1px;
+	height: 30px;
+  	width: 100%;
+}
+
+label {
+	display:block;
+}
+
+button {
+	padding:6px;
+}
+

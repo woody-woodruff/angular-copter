@@ -1,0 +1,67 @@
+		<div class="form-table-top">
+			<h1>{{ copter.ml_name }}</h1>
+			<hr>
+			Search: <input type="text" ng-model="searchReportFilter" class="form-control">
+			<table class="repairtab">
+				<thead class="repairtab2"><tr class="repairtab2"><th>Date</th><th width="80%">Comments</th><th>Rating</th><th>wind Dir</th><th>Wind Speed</th><th>Temp &deg;F</th>
+					<th>Weather</th>
+					<th></th></tr></thead>
+			<tbody>
+				<tr class="repairtab" ng-repeat="report in reports | filter:searchReportFilter">
+					<td>{{ report.flight_report_date }}</td>
+					<td>{{ report.comment_text }}&nbsp;</td>
+					<td>{{ report.rating }}&nbsp;</td>
+					<td>{{ report.wind_dir_prime }}&nbsp;</td>
+					<td>{{ report.wind_spd_name }}&nbsp;</td>
+					<td>{{ report.temp_f }}&nbsp;</td>
+					<td>{{ report.typ_weather_desc }}&nbsp;</td>
+					<td nowrap>
+						<!-- button ng-click="saveReport(report.flight-report_id)">Save</button -->
+						<img height="18" width="18" src="pics/trash-icon.png" ng-click="deleteReport(report.flight_report_id )" />
+					</td>
+				</tr>
+			</tbody>
+			<tfoot class="repairtab2">
+				<tr class="repairtab2">
+					<td><input type="date" name="flight_report_date" ng-model="flight_report_date" /></td>
+					<td><textarea name="comment_text" ng-model="comment_text"></textarea></td>
+
+					<td><input type="number"
+       ng-model="report.rating"
+       name="rating"
+       min="0"
+       max="10"
+       ng-required="true" /></td>
+					<td><input type="number"
+       ng-model="report.wind_dir"
+       name="wind_dir"
+       min="0"
+       max="359"
+       ng-required="true" /></td>
+					<td><input type="number"
+       ng-model="report.wind_spd"
+       name="wind_spd"
+       min="0"
+       ng-required="true" /></td>
+					<td><input type="number"
+       ng-model="report.temp_f"
+       name="temp_f"
+       min="−460"
+       max="460"
+       ng-required="true" /></td>
+<td>
+	<select size="1" width="50" name="typ_weather_id" id="typ_weather_id"  ng-model="report.typ_weather_id"  ng-controller="DropTableCtrl" ng-init="init('typ_weather')">
+      <option ng-repeat="option in data" value="{{ option.id }}"  ng-selected="{{option.id == $parent.report.typ_weather_id}}">{{ option.name }}</option>
+	</select>
+
+
+
+						<input type="hidden" name="comment_id" ng-model="comment_id" />
+						<input type="hidden" name="copter_id" ng-model="copter_id" />
+						<input type="hidden" name="surgey_id" ng-model="flight_report_id" />
+</td>
+					<td><img height="48" width="48" src="pics/save-icon.png" ng-click="saveReport(0)" /></td>
+				</tr>
+			</tfoot>
+			</table>
+		</div>

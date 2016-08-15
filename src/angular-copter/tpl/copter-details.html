@@ -1,0 +1,33 @@
+<div class="form-left-col">
+	<input name="id" type="hidden" ng-model="copter.ml_id" disabled />
+
+    <label>Name:</label>
+	<select size="1" name="ml_name_id" id="ml_name_id" ng-model="copter.ml_name_id" ng-controller="DropTableCtrl" ng-init="init('name')">
+      <option ng-repeat="option in data" value="{{option.id}}" ng-selected="{{option.id == $parent.copter.ml_name_id}}" label="{{option.name}}">{{option.name}}</option>
+	</select>
+
+    <label>Make:</label>
+	<select size="1" width="50" name="ml_make_id" id="ml_make_id" ng-model="copter.ml_make_id" ng-controller="DropTableCtrl" ng-init="init('make')">
+      <option ng-repeat="option in data" value="{{option.id}}" ng-selected="{{option.id == $parent.copter.ml_make_id}}" label="{{option.name}}">{{option.name}}</option>
+	</select>
+
+    <label>Model:</label>
+	<select size="1" name="ml_model_id" id="ml_model" ng-model="$parent.copter.ml_model_id" ng-controller="DropTableCtrl" ng-init="init('model')">
+      <option ng-repeat="option in data" value="{{option.id}}" ng-selected="{{option.id == $parent.copter.ml_model_id}}" label="{{option.name}}">{{option.name}}</option>
+	</select>
+
+    <label>Mfg:</label>
+	<select size="1" name="ml_mfg_id" id="ml_mfg_id" ng-model="$parent.copter.ml_mfg_id" ng-controller="DropTableCtrl" ng-init="init('mfg')">
+      <option ng-repeat="option in data" value="{{option.id}}" ng-selected="{{option.id == $parent.copter.ml_mfg_id}}" label="{{option.name}}">{{option.name}}</option>
+	</select>
+
+	<hr width="50%" align="left" />
+	<p>
+    <img src="pics/save-icon.png" height="48" width="48" ng-click="saveCopter()" />
+    <img src="pics/trash-icon.png" height="48" width="48" ng-click="deleteCopter()" />
+    </p>
+</div>
+
+<div class="form-right-col">
+    <img width="250" height="300" src="pics/{{ copter.ml_id }}.jpg" onerror="this.src='pics/generic.jpg'"/>
+</div>

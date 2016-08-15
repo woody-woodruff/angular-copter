@@ -1,0 +1,31 @@
+		<div class="form-table-top">
+			<h1>{{ copter.ml_name }}</h1>
+			<hr>
+			Search: <input type="text" ng-model="searchSurgeryFilter" class="form-control">
+			<table class="repairtab">
+				<thead class="repairtab2"><tr class="repairtab2"><th>Date</th><th width="80%">Comments</th><th width="80%">Repairs</th><th></th></tr></thead>
+			<tbody>
+				<tr class="repairtab" ng-repeat="surgery in surgerys | filter:searchSurgeryFilter">
+					<td>{{ surgery.surgery_date }}</td>
+					<td>{{ surgery.comment_text }}&nbsp;</td>
+					<td>{{ surgery.surgerys }}&nbsp;</td>
+					<td nowrap>
+						<!-- button ng-click="saveSurgery(surgery.surgery_id)">Save</button -->
+						<img height="18" width="18" src="pics/trash-icon.png" ng-click="deleteSurgery(surgery.surgery_id )" />
+					</td>
+				</tr>
+			</tbody>
+			<tfoot class="repairtab2">
+				<tr class="repairtab2">
+					<td><input type="date" name="surgery_date" ng-model="surgery_date" /></td>
+					<td><textarea name="comment_text" ng-model="comment_text"></textarea></td>
+					<td>&nbsp;
+						<input type="hidden" name="comment_id" ng-model="comment_id" />
+						<input type="hidden" name="copter_id" ng-model="copter_id" />
+						<input type="hidden" name="surgey_id" ng-model="surgery_id" />
+					</td>
+					<td><img height="48" width="48" src="pics/save-icon.png" ng-click="saveSurgery(0)" /></td>
+				</tr>
+			</tfoot>
+			</table>
+		</div>
