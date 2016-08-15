@@ -8,3 +8,7 @@ The front end is an AngularJS implementation. It is intended to permit editing o
 The AppServer is Tomcat, but should be platform agnostic. Current implementation is on a RaspberryPi 3 Model B. RESTful web services are provided by a PHP page using an *old* version of the "Slim" framework. In this case providing the support functionality of the framework would be less work than upgrading or changing frameworks. Most importatly it is not a current roadblock, and would take minimual effort to replace if needed.
 
 Configuration issues outside of scope are noted in the comments.
+
+The "src" folder has all the current code. The SQL file will set up the DB populated with a basic set of data. The "angular-copter" folder is what is deployed to the web server "as-is".
+
+-W
